@@ -18,7 +18,7 @@ public class ShareFragment extends Fragment {
         WebView dogview = myView.findViewById(R.id.dogView);
 
         dogview.loadUrl("https://swedbank.se/");
-        float scalingFactor = 0.9f; // scale down to half the size
+        float scalingFactor = 0.9f;
         dogview.setScaleX(scalingFactor);
         dogview.setScaleY(scalingFactor);
 
