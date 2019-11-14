@@ -7,7 +7,26 @@ android:layout_height="match_parent"
 app:layout_behavior="@string/appbar_scrolling_view_behavior"
 tools:context=".Fragments.SendFragment">
 
+    <EditText
+        android:id="@+id/fieldEdit"
+        android:layout_width="368dp"
+        android:layout_height="273dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-
-
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="257dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="76dp"
+        android:text="Send text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.987"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fieldEdit" />
 </android.support.constraint.ConstraintLayout>
