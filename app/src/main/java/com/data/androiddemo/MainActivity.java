@@ -3,6 +3,7 @@ package com.data.androiddemo;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
 import android.view.View;
 import android.support.v4.view.GravityCompat;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -13,6 +14,11 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+
+import com.data.androiddemo.Fragments.HomeFragment;
+import com.data.androiddemo.Fragments.SendFragment;
+import com.data.androiddemo.Fragments.ShareFragment;
+import com.data.androiddemo.Fragments.ToolsFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -77,16 +83,19 @@ public class MainActivity extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
+        Fragment currentFrag = null;
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
+            currentFrag = new HomeFragment();
         } else if (id == R.id.nav_tools) {
-
+            currentFrag = new ToolsFragment();
         } else if (id == R.id.nav_share) {
-
+            currentFrag = new ShareFragment();
         } else if (id == R.id.nav_send) {
-
+            currentFrag = new SendFragment();
         }
+
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, currentFrag).commit();
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
